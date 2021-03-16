@@ -8,7 +8,8 @@
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
+    transition: 0.5s ease-out;
+
 }
 
 #menu::before,
@@ -19,15 +20,43 @@
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
     position: absolute;
+
 }
 
 #menu::before {
     left: 0;
     top: -20px;
+    transition: 0.5s ease-out;
 }
 
 #menu::after {
     left: 0;
     top: 20px;
+    transition: 0.5s ease-out;
 }
 
+#hover-container {
+
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    padding: 20px 0 20px 0;
+    margin: 50px;
+}
+
+
+#hover-container:hover #menu {
+    background-color: transparent;
+
+}
+
+#hover-container:hover #menu::before {
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
+}
+
+#hover-container:hover #menu::after {
+    left: 0;
+    top: 0;
+    transform: rotate(-45deg);
+}
